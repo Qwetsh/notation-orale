@@ -1,10 +1,10 @@
 const CACHE_NAME = 'notation-orale-v1';
 const ASSETS = [
-    '/',
-    '/index.html',
-    '/app.css',
-    '/app.js',
-    '/manifest.json',
+    './',
+    './index.html',
+    './app.css',
+    './app.js',
+    './manifest.json',
     'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'
 ];
 
