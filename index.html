@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Notation Orale</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.svg">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Écran 1 : Liste des groupes -->
+        <section id="screen-list" class="screen active">
+            <header>
+                <h1>📋 Notation Orale</h1>
+            </header>
+            <main>
+                <div id="groups-list"></div>
+                <button id="btn-new-group" class="btn-primary btn-large">+ Nouveau Groupe</button>
+            </main>
+        </section>
+
+        <!-- Écran 2 : Création/Édition groupe -->
+        <section id="screen-create" class="screen">
+            <header>
+                <button class="btn-back" onclick="showScreen('list')">← Retour</button>
+                <h1>Nouveau Groupe</h1>
+            </header>
+            <main>
+                <form id="form-group">
+                    <div class="form-group">
+                        <label for="subject-name">Nom du sujet</label>
+                        <input type="text" id="subject-name" placeholder="Ex: Le sommeil" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="group-name">Nom du groupe</label>
+                        <input type="text" id="group-name" placeholder="Ex: Groupe 1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="students-list">Élèves (un par ligne)</label>
+                        <textarea id="students-list" rows="5" placeholder="Emma&#10;Lucas&#10;Léa" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-large">Créer le groupe</button>
+                </form>
+            </main>
+        </section>
+
+        <!-- Écran 3 : Notation -->
+        <section id="screen-grade" class="screen">
+            <header>
+                <button class="btn-back" onclick="showScreen('list')">← Retour</button>
+                <h1 id="grade-title">Notation</h1>
+                <div id="grade-subject" class="subject-badge"></div>
+            </header>
+            <nav id="tabs-nav">
+                <!-- Onglets générés dynamiquement -->
+            </nav>
+            <main id="grade-content">
+                <!-- Contenu de notation généré dynamiquement -->
+            </main>
+            <footer class="grade-footer">
+                <button id="btn-export-pdf" class="btn-secondary">📄 Exporter PDF</button>
+                <button id="btn-delete-group" class="btn-danger">🗑️ Supprimer</button>
+            </footer>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

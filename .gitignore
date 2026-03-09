@@ -1,0 +1,19 @@
+# IDE
+.idea/
+.vscode/
+.claude/
+
+# Design
+ExempleDesign.png
+
+# OS
+.DS_Store
+Thumbs.db
+
+# BMAD
+_bmad/
+_bmad-output/
+
+# Documents sources
+*.pdf
+!icon-*.pdf
